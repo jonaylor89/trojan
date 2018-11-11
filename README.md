@@ -1,5 +1,5 @@
 
 # Trojans
 
-A list of trojan modules for pratice
+A list of trojan modules for practice
 
